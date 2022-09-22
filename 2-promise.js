@@ -31,3 +31,16 @@
 //? Zincirleme olarak kullanilabilirler.
 
 console.log("Promise");
+
+const myPromise = new Promise((resolve, reject) => {
+  const success = Math.floor(Math.random() * 5);
+  const data = { a: 1, b: 2 };
+  if (success) {
+    console.log("data fetched");
+    resolve(data);
+  } else {
+    reject(new Error("fetch halted"));
+  }
+});
+
+myPromise.then((i) => console.log(i)).catch((err) => console.log(err));

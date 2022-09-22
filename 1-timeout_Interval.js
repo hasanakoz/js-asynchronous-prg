@@ -48,13 +48,40 @@
 //* Asynchronous (setInterval, clearInterval)
 //*-----------------------------------
 
-console.log("start");
-let counter = 0;
-const intervalId = setInterval(() => {
-  console.log(++counter);
-  if (counter > 4) {
-    clearInterval(intervalId);
-    console.log("everything finished");
-  }
-}, 1000);
-console.log("stop");
+// console.log("start");
+// let counter = 0;
+// const intervalId = setInterval(() => {
+//   console.log(++counter);
+//   if (counter > 4) {
+//     clearInterval(intervalId);
+//     console.log("everything finished");
+//   }
+// }, 1000);
+// console.log("stop");
+
+//! Callback Hell (nested ve birbirine bagli callback'ler)
+//!-----------------------------------------------------
+//* Eger birbirine bagimli asenkron kodlarin yazilmasi gerekirse,nested callback
+//* yapisinin kullanilmasi gerekebilir. Fakat bu iyi bir programlama yaklasimi degildir.
+// !callback hell olarak adlandirilan bu yapinin anlasilmasi ve surdurulebilirligi oldukca zordur.
+
+// setTimeout(() => {
+//   console.log("john:Hi");
+//   setTimeout(() => {
+//     console.log("Sarah: Hello");
+//     setTimeout(() => {
+//       console.log("John: How Are you?");
+//       setTimeout(() => {
+//         console.log("Sarah:Fine and you?");
+//       }, 1000);
+//     }, 1000);
+//   }, 1000);
+// }, 1000);
+
+//? COZUMLER:
+//?----------------------------------------------------
+//* 1- XMLHttpRequest (Eski yontem, Ornek: AJAX)
+//? https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest
+//* 2- Promise,
+//! 3- Fetch API (Promise'in basitlestirilmis hali),
+//! 4- ASYNC-AWAIT (Fetch API'nin makyajlanmis hali)
