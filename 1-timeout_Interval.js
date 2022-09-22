@@ -19,4 +19,42 @@
 //* Senkron
 //* ------------------------------------------------
 
-console.log("Timeout-Interval");
+// const bekle = (waitingTime) => {
+//   const startTime = new Date().getTime();
+//   while (new Date().getTime() < startTime + waitingTime);
+// };
+
+// console.log("hello");
+// // alert("cw"); //blocking code
+
+// console.time("timer");
+// bekle(3000); //blocking code
+// console.timeEnd("timer");
+// console.log("fs12");
+
+//* Asynchronous (setTimeout)
+//*-----------------------------------
+
+// console.log("timeout");
+// setTimeout(() => {
+//   console.log("hi");
+// }, 1000); // last in the queue..
+
+// setTimeout(() => {
+//   console.log("hello");
+// }, 500);
+// console.log("timeout bitti");
+
+//* Asynchronous (setInterval, clearInterval)
+//*-----------------------------------
+
+console.log("start");
+let counter = 0;
+const intervalId = setInterval(() => {
+  console.log(++counter);
+  if (counter > 4) {
+    clearInterval(intervalId);
+    console.log("everything finished");
+  }
+}, 1000);
+console.log("stop");
